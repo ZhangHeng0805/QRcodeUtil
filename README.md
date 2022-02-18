@@ -1,5 +1,5 @@
 # QRcodeUtil
-# [项目jar下载]("https://github.com/ZhangHeng0805/QRcodeUtil/releases/download/v1.0/QRcodeUtil.zip")
+# [项目jar下载](https://github.com/ZhangHeng0805/QRcodeUtil/releases/download/v1.0/QRcodeUtil.zip)
 生成和解析二维码
 > * 只能解析黑白像素默认格式的二维码，彩色，艺术格式的二维码可能解析错误！
 > * 生成的二维码规格为300×300，其中logo规格为60×60
