@@ -1,6 +1,4 @@
 import com.zhangheng.qrcode.QRCodeUtil;
-import com.zhangheng.test.Human;
-import com.zhangheng.test.ZhangSan;
 
 import java.io.File;
 import java.util.Scanner;
