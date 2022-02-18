@@ -24,34 +24,36 @@ public class Main {
                 .append("=============================\n")
                 .append("请输入操作编号:");
         System.out.println(str_notice.toString());
-        while (true){
-            System.out.println(str_title.toString());
-            Scanner sc = new Scanner(System.in);
-            int i = sc.nextInt();
-            if (i==0){
-                System.out.println("系统关闭！");
-                break;
-            }else if (i==1){
-                System.out.println("请输入生成的二维码内容:");
-                Scanner sc1_content = new Scanner(System.in);
-                String content=sc1_content.nextLine();
-                System.out.println("请输入生成的二维码文件名称:");
-                Scanner sc1_name = new Scanner(System.in);
-                String name=sc1_name.nextLine();
-                if (name==null||name.length()<=0){
-                    name= UUID.randomUUID().toString().substring(0,6);
-                }
-                System.out.println(enCode(content, name));
-            }else if (i==2){
-                System.out.println("请输入解析的二维码文件名称:");
-                Scanner sc2_name = new Scanner(System.in);
-                String name=sc2_name.nextLine();
-                System.out.println(deCode(name));
-            }else {
-                System.out.println("(＞人＜；)对不起，您输入操作编号错误！");
-            }
-        }
 
+        System.out.println(str_title.toString());
+        Scanner sc = new Scanner(System.in);
+        int i = sc.nextInt();
+        if (i==0){
+            System.out.println("系统关闭！");
+            Thread.sleep(1000);
+            System.exit(0);
+        }else if (i==1){
+            System.out.println("请输入生成的二维码内容:");
+            Scanner sc1_content = new Scanner(System.in);
+            String content=sc1_content.nextLine();
+            System.out.println("请输入生成的二维码文件名称:");
+            Scanner sc1_name = new Scanner(System.in);
+            String name=sc1_name.nextLine();
+            if (name==null||name.length()<=0){
+                name= UUID.randomUUID().toString().substring(0,6);
+            }
+            System.out.println(enCode(content, name));
+        }else if (i==2){
+            System.out.println("请输入解析的二维码文件名称:");
+            Scanner sc2_name = new Scanner(System.in);
+            String name=sc2_name.nextLine();
+            System.out.println(deCode(name));
+        }else {
+            System.out.println("(＞人＜；)对不起，您输入操作编号错误！");
+        }
+        System.out.println("\n提示:系统将在15秒自动后关闭！");
+        Thread.sleep(15000);
+        System.exit(0);
     }
 
 
@@ -84,9 +86,9 @@ public class Main {
             isSuccess= QRCodeUtil.encode(content,imgPath);
         }
         if (isSuccess){
-            return "二维码生成成功!二维码路径: "+imgPath.substring(1);
+            return "二维码生成成功！二维码路径: "+imgPath.substring(1);
         }else {
-            return "二维码生成失败!";
+            return "二维码生成失败！";
         }
     }
 
